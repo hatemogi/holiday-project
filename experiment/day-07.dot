@@ -1,0 +1,29 @@
+digraph G {
+  rankdir="LR";
+  splines="curved";
+  node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
+  edge [arrowsize=0.7];
+
+  시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
+  d1 [href="/holiday-project-day-01/", label="D1\nkarma&jasmine"];
+  d2 [href="/holiday-project-day-02/", label="D2\njasmine-node"];
+  d3 [href="/holiday-project-day-03/", label="D3\nsupertest"];
+  d4 [href="/holiday-project-day-04/", label="D4\nbower"];
+  d5 [href="/holiday-project-day-05/", label="D5\nhighlight.js"];
+  d6 [href="/holiday-project-day-06/", label="D6\ngraghviz\nD3.js"];
+  d7 [href="/holiday-project-day-07/", label="D7\ngraphviz\n웹링크"];
+  시작 -> d1 -> d2 -> d3;
+  시작 -> d4 -> d5;
+  d1 -> d5;
+  d4 -> d6 -> d7;
+}
+
+/*
+(05/07) 프로젝트 1일: 웹 브라우저 JS 테스트 환경 구축 - karma & jasmine
+(05/08) 프로젝트 2일: 서버사이드 JS 테스트 환경 구축 - jasmine-node
+(05/09) 프로젝트 3일: express 테스트 환경 구축 - supertest
+(05/10) 프로젝트 4일: 웹 환경 패키지 매니저 - bower
+(05/11) 프로젝트 5일: 문법 하이라이팅 - highlight.js
+(05/12) 프로젝트 6일: 그래프 그리기 - graphviz & D3.js
+(05/13) 프로젝트 7일: 그래프 그리기 - graphviz & D3.js
+*/
