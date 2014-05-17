@@ -34,7 +34,6 @@ async.waterfall [
         author: commit.author
         parents: parents
       }
-      console.err commit.diff()
       branches["master"].push key
       commits[key] = c
     history.on 'end', (r) ->
