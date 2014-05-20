@@ -5,12 +5,14 @@
   "scripts": {
     "start": "node ./bin/www",
     "karma": "./node_modules/karma/bin/karma start",
-    "spec": "./node_modules/jasmine-node/bin/jasmine-node --coffee --verbose spec"
+    "spec": "./node_modules/jasmine-node/bin/jasmine-node --coffee --verbose spec",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
  "engines": {
     "node": "0.10.28"
   },
   "dependencies": {
+    "bower": "~1.3.3",
     "express": "~4.0.0",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
