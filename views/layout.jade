@@ -1,8 +1,26 @@
 doctype html
 html
-  head
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    - title = '30일 프로젝트'
+    - description = "휴가 기간 동안 진행한 개인 프로젝트 데모 사이트"
     title= title
+    meta(property="og:title" content="#{title}")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="http://holiday-project.hatemogi.com")
+    meta(property="og:description" content="#{description}")
+    //- meta(property="og:image" content="")
+
+    meta(property="twitter:title" content="#{title}")
+    meta(property="twitter:description" content="#{description}")
+
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
   body
     block content
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
     include ga
+    include github_badge
