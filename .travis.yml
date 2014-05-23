@@ -1,4 +1,11 @@
- language: node_js
- node_js:
-   - "0.10"
-   - "0.11"
+language: node_js
+node_js:
+- '0.10'
+- '0.11'
+deploy:
+  provider: heroku
+  api_key:
+    secure: owS8EBINLvKZ1ZyjtGGEFnmUrsjnnIhThJjmaLXp8Eg3Um9YQ5cfhTvqj+XkZUF6YZ0fqTt4RfHokfGRb15q5F8oM3j0UpRYxC4YsnMOFd2CEF20qH7ecH7AZfz4ZrsoTH7fp/+mAsps5wB0jaI1xppQPqVIEBbM582YE/HMcfw=
+  app: holiday-project-staging
+  on:
+    repo: hatemogi/holiday-project
