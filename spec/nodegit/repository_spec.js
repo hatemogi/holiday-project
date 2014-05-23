@@ -1,8 +1,9 @@
+nodegitPath = ".git/modules/git/nodegit/"
 describe('nodegit 저장소', function() {
   var Repo = require("nodegit").Repo;
 
   it('열어서 커밋 찾아보기', function(done) {
-    Repo.open("git/nodegit", function(err, repo) {
+    Repo.open(nodegitPath, function(err, repo) {
       if (err) {
         return done(err);
       }
