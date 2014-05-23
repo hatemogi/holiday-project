@@ -1,5 +1,6 @@
 nodegit = require("nodegit")
 async = require("async")
+_ = require("underscore")
 
 describe '[CoffeeScript w/async.js] nodegit 저장소', () ->
   it '열어서 커밋 찾아보기', (done) ->
@@ -33,8 +34,6 @@ describe '[CoffeeScript w/async.js] nodegit 저장소', () ->
         (tree1, tree2, callback) ->
           tree1.diff tree2, callback
         (diff, callback) ->
-          diff.patch 0, callback
-        (patch, callback) ->
-          console.log "reached"
+          expect(_.reduce(diff.patches(), ((m, p) -> m + p.size()), 0)).toBe(2)
           callback null
       ], (err, _result) -> done(err)

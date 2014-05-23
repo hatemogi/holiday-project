@@ -7,7 +7,7 @@ describe('express 앱', function() {
       .get('/')
       .expect('Content-Type', /html/)
       .expect(200)
-      .expect(/Express/)
+      .expect(/30일 프로젝트/)
       .end(function (err, res) {
         if (err) done(err);
         done();
