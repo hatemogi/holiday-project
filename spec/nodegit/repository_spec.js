@@ -7,7 +7,7 @@ describe('nodegit 저장소', function() {
       if (err) {
         return done(err);
       }
-      expect(repo.path()).toMatch(/\.git\/$/);
+      expect(repo.path()).toMatch(/\/git\/nodegit\/$/);
 
       var sha = "e9ec116a8fb2ea051a4c2d46cba637b3fba30575";
       repo.getCommit(sha, function(err, entry) {
