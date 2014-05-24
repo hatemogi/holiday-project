@@ -2,7 +2,7 @@
 - title = site.title || '30일 프로젝트'
 - description = site.description || "휴가 기간 동안 진행한 개인 프로젝트 데모 사이트"
 doctype html
-html
+html(ng-app="holiday")
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -22,6 +22,8 @@ html
     link(rel='stylesheet' href='/css/style.css')
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/bower_components/angular/angular.min.js')
+    script(src='/js/app.js')
   body
     .container
       .header
