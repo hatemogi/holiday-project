@@ -15,6 +15,7 @@ module.exports = (grunt) ->
       all: {
         options: {
           sourceMap: true
+          sourceMapIn: 'public/js/app.js.map'
           sourceMapName: 'public/js/app.min.js.map'
         }
         sourceMap: true
