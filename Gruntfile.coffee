@@ -1,5 +1,5 @@
 module.exports = (grunt) ->
-  js_files = ['app.js', 'lib/*.js', 'public/js/app.js']
+  js_files = ['app.js', 'lib/*.js', 'public/js/app.js', 'public/spec/*.js']
 
   grunt.initConfig {
     pkg: grunt.file.readJSON('package.json')
@@ -42,12 +42,18 @@ module.exports = (grunt) ->
     jshint: {
       all: js_files
     }
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
+    }
   }
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
+  grunt.loadNpmTasks 'grunt-karma'
 
   grunt.registerTask 'default', ['coffee', 'uglify']
-    
