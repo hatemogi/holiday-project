@@ -49,5 +49,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
 
-  grunt.registerTask 'default', ['concat', 'coffee', 'uglify']
+  grunt.registerTask 'default', ['coffee', 'uglify']
     
