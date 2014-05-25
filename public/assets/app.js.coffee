@@ -22,7 +22,16 @@ require_conf = {
   }
 }
 
-require_conf.baseUrl = 'base/' if KARMA_MODE?
+# Karma 테스트를 위한 설정
+if window.__karma__
+  spec_files = []
+  Object.keys(window.__karma__.files).forEach (f) ->
+    if /_spec.js$/.test(f)
+      spec_files.push f.replace(/^\/base\//, '').replace(/\.js$/, '')
+  console.log ["테스트 대상", spec_files]
+  require_conf.baseUrl = 'base/' 
+  require_conf.deps = spec_files
+  require_conf.callback = window.__karma__.start
 
 require.config require_conf
 

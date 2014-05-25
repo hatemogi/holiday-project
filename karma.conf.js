@@ -4,15 +4,15 @@ module.exports = function(config) {
     frameworks: ['jasmine', 'requirejs'],
     files: [
       'js/require.min.js',
-      'bower_components/jquery/dist/jquery.min.js',
-      'spec/karma_mode.js',
       'js/app.js',
       {pattern: 'bower_components/**/*.js', included: false},
       {pattern: 'bower_components/**/*.map', included: false},
-      'spec/*Spec.js'
+      {pattern: 'spec/*_spec.js', included: false}
     ],
     exclude: [],
-    preprocessors: {},
+    preprocessors: {
+
+    },
     reporters: ['progress'],
     port: 9876,
     colors: true,
