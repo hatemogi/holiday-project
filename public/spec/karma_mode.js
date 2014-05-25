@@ -1,0 +1,1 @@
+var KARMA_MODE = true;

@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
 
     coffee: {
-      compile: {
+      app: {
         options: {
           sourceMap: true
         }
@@ -16,6 +16,14 @@ module.exports = (grunt) ->
     }
 
     uglify: {
+      requirejs: {
+        options: {
+          sourceMap: true
+        }
+        files: {
+          "public/js/require.min.js": ["public/bower_components/requirejs/require.js"]
+        }
+      }
       app: {
         options: {
           sourceMap: true
@@ -31,7 +39,7 @@ module.exports = (grunt) ->
     watch:  {
       coffee: {
         files: ["public/assets/*.coffee"]
-        tasks: ["coffee", "uglify"]
+        tasks: ["coffee", "uglify:app"]
       }
       jshint: {
         files: js_files
@@ -48,6 +56,16 @@ module.exports = (grunt) ->
         configFile: 'karma.conf.js'
       }
     }
+
+    jasmine: {
+      unit: {
+        src: ["lib/*.js"]
+        options: {
+          specs: ["spec/*_spec.js"]
+          helpers: "spec/helper.js"
+        }
+      }
+    }
   }
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -55,5 +73,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-karma'
+  grunt.loadNpmTasks 'grunt-contrib-jasmine'
 
   grunt.registerTask 'default', ['coffee', 'uglify']

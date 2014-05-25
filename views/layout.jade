@@ -2,7 +2,7 @@
 - title = site.title || '30일 프로젝트'
 - description = site.description || "휴가 기간 동안 진행한 개인 프로젝트 데모 사이트"
 doctype html
-html(ng-app="holiday")
+html
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -12,18 +12,16 @@ html(ng-app="holiday")
     meta(property="og:type" content="website")
     meta(property="og:url" content="http://holiday-project.hatemogi.com")
     meta(property="og:description" content="#{description}")
-    //- meta(property="og:image" content="")
-
+    if site.image
+      meta(property="og:image" content="#{site.image}")
     meta(property="twitter:title" content="#{title}")
     meta(property="twitter:description" content="#{description}")
 
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel='stylesheet' href='/css/style.css')
-    script(src='/bower_components/jquery/dist/jquery.min.js')
-    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
-    script(src='/bower_components/angular/angular.min.js')
-    script(src='/js/app.min.js')
+
+    script(data-main='/js/app.min.js' src='/js/require.min.js')
   body
     .container
       .header
