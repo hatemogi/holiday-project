@@ -1,10 +1,5 @@
----
-title: '30일 프로젝트 - 일지 목록'
-kind: article
-created_at: 2014-05-11
-updated_at: 2014-05-12
-layout: article
----
+30일간의 Node.js 웹애플리케이션 개발 여행
+==================================
 
 [![Build Status](https://travis-ci.org/hatemogi/holiday-project.svg?branch=master)](https://travis-ci.org/hatemogi/holiday-project)
 
@@ -19,4 +14,33 @@ layout: article
 
 > <https://github.com/hatemogi/holiday-project>
 
-그날 그날 day-00 태그를 달아 올리고 있다. 
+그날 그날 day-00 태그를 달아 올리고 있다.
+
+데모사이트
+---------
+
+* http://holiday-project.hatemogi.com (stable)
+* http://holiday-project-staging.hatemogi.com (staging)
+
+직접설치
+--------
+
+```bash
+git clone https://github.com/hatemogi/holiday-project.git
+cd holiday-project
+npm install
+git submodule update --init
+npm test
+npm start
+open http://0.0.0.0:3000/
+```
+
+개발해보기
+---------
+
+```bash
+grunt
+grunt watch
+```
+
+```watch``` 태스크 걸어놓고, 행복한 개발 시작~!
