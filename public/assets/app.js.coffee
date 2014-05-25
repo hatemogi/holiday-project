@@ -5,6 +5,7 @@ require_conf = {
     bootstrap: "bower_components/bootstrap/dist/js/bootstrap.min"
     angular: "bower_components/angular/angular.min"
     d3: "bower_components/d3/d3.min"
+    underscore: "js/underscore.min"
   }
   shim: {
     angular: {
@@ -14,6 +15,9 @@ require_conf = {
     bootstrap: {
       exports: "bootstrap"
       deps: ["jquery"]
+    }
+    underscore: {
+      exports: "_"
     }
   }
 }

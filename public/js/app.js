@@ -7,7 +7,8 @@
       jquery: "bower_components/jquery/dist/jquery.min",
       bootstrap: "bower_components/bootstrap/dist/js/bootstrap.min",
       angular: "bower_components/angular/angular.min",
-      d3: "bower_components/d3/d3.min"
+      d3: "bower_components/d3/d3.min",
+      underscore: "js/underscore.min"
     },
     shim: {
       angular: {

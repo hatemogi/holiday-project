@@ -16,6 +16,14 @@ module.exports = (grunt) ->
     }
 
     uglify: {
+      underscore: {
+        options: {
+          sourceMap: true
+        }
+        files: {
+          "public/js/underscore.min.js": ["public/bower_components/underscore/underscore.js"]
+        }        
+      }
       requirejs: {
         options: {
           sourceMap: true

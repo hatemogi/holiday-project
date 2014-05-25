@@ -22,7 +22,8 @@
     "google-code-prettify": "~1.0.1",
     "highlightjs": "~8.0.0",
     "d3": "~3.4.8",
-    "requirejs": "~2.1.11"
+    "requirejs": "~2.1.11",
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "jasmine": "~2.0.0"
