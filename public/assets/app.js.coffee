@@ -10,7 +10,6 @@ require_conf = {
   shim: {
     angular: {
       exports: "angular"
-      deps: ["jquery"]
     }
     bootstrap: {
       exports: "bootstrap"
@@ -35,12 +34,10 @@ if window.__karma__
 
 require.config require_conf
 
-require ['angular', 'jquery', 'bootstrap'], (ng, $, bootstrap) ->
+require ['angular'], (ng) ->
   ng.module("holiday", [])
     .controller "LoginCtrl", () ->
       this.welcome = "환영합니다"
       this
   ng.element(document).ready () -> 
     ng.bootstrap(document, ['holiday']);
-    $ () ->
-      console.log "app.js.coffee loaded"

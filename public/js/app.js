@@ -12,8 +12,7 @@
     },
     shim: {
       angular: {
-        exports: "angular",
-        deps: ["jquery"]
+        exports: "angular"
       },
       bootstrap: {
         exports: "bootstrap",
@@ -40,16 +39,13 @@
 
   require.config(require_conf);
 
-  require(['angular', 'jquery', 'bootstrap'], function(ng, $, bootstrap) {
+  require(['angular'], function(ng) {
     ng.module("holiday", []).controller("LoginCtrl", function() {
       this.welcome = "환영합니다";
       return this;
     });
     return ng.element(document).ready(function() {
-      ng.bootstrap(document, ['holiday']);
-      return $(function() {
-        return console.log("app.js.coffee loaded");
-      });
+      return ng.bootstrap(document, ['holiday']);
     });
   });
 
