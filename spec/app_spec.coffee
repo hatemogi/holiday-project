@@ -7,6 +7,11 @@ describe "express 앱", ->
       .expect("Content-Type", /html/)
       .expect(200)
       .expect(/30일 프로젝트/)
-      .end (err, res) ->
-        done(err)
+      .end done
+  it "GET /d3", (done) ->
+    request(app).get("/d3")
+      .expect("Content-Type", /html/)
+      .expect(200)
+      .expect(/svg/)
+      .end done
 
