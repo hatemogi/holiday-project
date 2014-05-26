@@ -65,13 +65,13 @@ module.exports = (grunt) ->
       }
     }
 
-    jasmine: {
-      unit: {
-        src: ["lib/*.js"]
-        options: {
-          specs: ["spec/*_spec.js"]
-          helpers: "spec/helper.js"
-        }
+    jasmine_node: {
+      all: ["spec/"]
+      options: {
+        extensions: ".coffee"
+        match: ["."]
+        helpers: "spec/helper.coffee"
+        coffee: true
       }
     }
   }
@@ -81,6 +81,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-karma'
-  grunt.loadNpmTasks 'grunt-contrib-jasmine'
+  grunt.loadNpmTasks 'grunt-jasmine-node'
 
-  grunt.registerTask 'default', ['coffee', 'uglify']
+  grunt.registerTask 'test', ['jasmine_node']
+  grunt.registerTask 'default', ['coffee', 'uglify', 'test']

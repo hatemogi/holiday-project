@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "./node_modules/.bin/coffee ./bin/www.coffee",
-    "test": "./node_modules/jasmine-node/bin/jasmine-node --coffee --verbose spec",
+    "test": "./node_modules/.bin/grunt test",
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "engines": {
@@ -34,6 +34,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-node": "^0.2.1",
     "grunt-karma": "^0.8.3",
     "jasmine-node": "^1.14.3",
     "karma": "^0.12.14",
