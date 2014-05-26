@@ -5,7 +5,4 @@ block content
     h1= title
     p D3.js로 SVG 그래프를 그려봅시다.
 
-  .login-controller(ng-controller="LoginCtrl as login")
-    {{ login.welcome }}
-
-  svg.d3
+  svg.d3(ng-controller="D3Ctrl as d3")

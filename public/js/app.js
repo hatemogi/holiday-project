@@ -39,14 +39,22 @@
 
   require.config(require_conf);
 
-  require(['angular'], function(ng) {
+  require(['angular', 'd3'], function(ng, d3) {
     ng.module("holiday", []).controller("LoginCtrl", function() {
       this.welcome = "환영합니다";
+      return this;
+    }).controller("D3Ctrl", function() {
+      console.log("D3 컨트롤러");
+      console.log(d3);
       return this;
     });
     return ng.element(document).ready(function() {
       return ng.bootstrap(document, ['holiday']);
     });
+  });
+
+  define('d3-init', ['d3'], function(d3) {
+    return console.log(['D3', d3]);
   });
 
 }).call(this);

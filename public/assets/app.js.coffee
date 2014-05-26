@@ -34,10 +34,17 @@ if window.__karma__
 
 require.config require_conf
 
-require ['angular'], (ng) ->
+require ['angular', 'd3'], (ng, d3) ->
   ng.module("holiday", [])
     .controller "LoginCtrl", () ->
       this.welcome = "환영합니다"
       this
+    .controller "D3Ctrl", () ->
+      console.log "D3 컨트롤러"
+      console.log d3
+      this
   ng.element(document).ready () -> 
     ng.bootstrap(document, ['holiday']);
+
+define 'd3-init', ['d3'], (d3) ->
+  console.log ['D3', d3]
