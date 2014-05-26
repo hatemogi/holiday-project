@@ -1,50 +1,17 @@
-require_conf = {
-  baseUrl: '/'
-  paths: {
-    jquery: "bower_components/jquery/dist/jquery.min"
-    bootstrap: "bower_components/bootstrap/dist/js/bootstrap.min"
-    angular: "bower_components/angular/angular.min"
-    d3: "bower_components/d3/d3.min"
-    underscore: "js/underscore.min"
-  }
-  shim: {
-    angular: {
-      exports: "angular"
-    }
-    bootstrap: {
-      exports: "bootstrap"
-      deps: ["jquery"]
-    }
-    underscore: {
-      exports: "_"
-    }
-  }
-}
-
-# Karma 테스트를 위한 설정
-if window.__karma__
-  spec_files = []
-  Object.keys(window.__karma__.files).forEach (f) ->
-    if /_spec.js$/.test(f)
-      spec_files.push f.replace(/^\/base\//, '').replace(/\.js$/, '')
-  console.log ["테스트 대상", spec_files]
-  require_conf.baseUrl = 'base/' 
-  require_conf.deps = spec_files
-  require_conf.callback = window.__karma__.start
-
-require.config require_conf
-
-require ['angular', 'd3'], (ng, d3) ->
-  ng.module("holiday", [])
+  angular.module("holiday", [])
     .controller "LoginCtrl", () ->
       this.welcome = "환영합니다"
       this
-    .controller "D3Ctrl", () ->
-      console.log "D3 컨트롤러"
-      console.log d3
+    .controller "D3Ctrl", ['$scope', '$http', ($scope, $http) ->
+      this.tab = "sankey"
+      $scope.content = ''
+      this.selectTab = (t) ->
+        this.tab = t
+        console.log ["sankey 클릭됨", t]
+        if t == 'sankey'
+          $http.get('/d3/sankey').success (r) ->
+            $scope.content = r
+      this.isSelected = (t) ->
+        this.tab == t
       this
-  ng.element(document).ready () -> 
-    ng.bootstrap(document, ['holiday']);
-
-define 'd3-init', ['d3'], (d3) ->
-  console.log ['D3', d3]
+    ]

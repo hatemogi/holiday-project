@@ -20,9 +20,7 @@ html
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel='stylesheet' href='/css/style.css')
-
-    script(data-main='/js/app.min.js' src='/js/require.min.js')
-  body
+  body(ng-app="holiday")
     .container
       .header
         ul.nav.nav-pills.pull-right
@@ -37,5 +35,8 @@ html
       .footer
         p
           a(href="http://hatemogi.com/holiday-project/") 개발일지
+    script(src="/bower_components/angular/angular.min.js")
+    script(src="/js/app.min.js")      
+    script(data-main='/js/init.min.js' src='/js/require.min.js')
     include ga
     include github_badge

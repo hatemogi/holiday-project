@@ -11,6 +11,7 @@ module.exports = (grunt) ->
         }
         files: {
           "public/js/app.js": ['public/assets/app.js.coffee']
+          "public/js/init.js": ['public/assets/init.js.coffee']
         }
       }
     }
@@ -42,12 +43,22 @@ module.exports = (grunt) ->
           "public/js/app.min.js": ["public/js/app.js"]
         }
       }
+      init: {
+        options: {
+          sourceMap: true
+          sourceMapIn: 'public/js/init.js.map'
+          sourceMapName: 'public/js/init.min.js.map'
+        }
+        files: {
+          "public/js/init.min.js": ["public/js/init.js"]
+        }
+      }
     }
 
     watch:  {
       coffee: {
         files: ["public/assets/*.coffee"]
-        tasks: ["coffee", "uglify:app"]
+        tasks: ["coffee", "uglify:app", "uglify:init"]
       }
       jshint: {
         files: js_files

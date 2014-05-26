@@ -5,4 +5,11 @@ block content
     h1= title
     p D3.js로 SVG 그래프를 그려봅시다.
 
-  svg.d3(ng-controller="D3Ctrl as d3")
+  .d3(ng-controller="D3Ctrl as d3")
+    ul.nav.nav-pills
+      li(ng-class="{ active:d3.isSelected('sankey') }")
+        a(href ng-click="d3.selectTab('sankey')") Sankey 다이어그램
+    .content
+      | {{ content }}
+    svg.d3
+
