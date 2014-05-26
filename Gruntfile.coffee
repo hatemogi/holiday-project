@@ -53,6 +53,10 @@ module.exports = (grunt) ->
         files: js_files
         tasks: ["jshint"]
       }
+      jasmine_node: {
+        files: ["lib/**/*.coffee", "spec/**/*.coffee"]
+        tasks: ["jasmine_node"] 
+      }
     }
 
     jshint: {
