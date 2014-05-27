@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "jasmine": "~2.0.0",
+    "angular-route": "~1.2.16",
     "angular-mocks": "~1.2.16"
   },
   "resolutions": {

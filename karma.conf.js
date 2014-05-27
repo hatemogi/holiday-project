@@ -3,8 +3,12 @@ module.exports = function(config) {
     basePath: 'public/',
     frameworks: ['jasmine', 'requirejs'],
     files: [
-      'js/require.min.js',
+      'bower_components/angular/angular.min.js',
+      'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       'js/app.js',
+      'js/require.min.js',
+      'js/init.js',
       {pattern: 'bower_components/**/*.js', included: false},
       {pattern: 'bower_components/**/*.map', included: false},
       {pattern: 'spec/*_spec.js', included: false}
