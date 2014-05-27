@@ -7,16 +7,16 @@ nodegitPath = ".git/modules/git/nodegit/"
 describe '[CoffeeScript w/async.js] nodegit 저장소', () ->
   it '열어서 커밋 찾아보기', (done) ->
     sha = "e9ec116a8fb2ea051a4c2d46cba637b3fba30575"
+    open = nodegit.Repo.open
     async.waterfall [
-      (callback) -> 
-        nodegit.Repo.open nodegitPath, callback
+      open.bind(open, nodegitPath)
       (repo, callback) ->
         expect(repo.path()).toMatch /\/git\/nodegit\/$/
         repo.getCommit sha, callback
       (entry, callback) ->
         expect(entry.sha()).toEqual sha
         callback null
-    ], (err, _result) -> done(err)
+    ], done
   it 'diff 실행해보기', (done) ->
     nodegit.Repo.open nodegitPath, (err, repo) ->
       return done(err) if err
@@ -38,4 +38,4 @@ describe '[CoffeeScript w/async.js] nodegit 저장소', () ->
         (diff, callback) ->
           expect(_.reduce(diff.patches(), ((m, p) -> m + p.size()), 0)).toBe(2)
           callback null
-      ], (err, _result) -> done(err)
+      ], done
