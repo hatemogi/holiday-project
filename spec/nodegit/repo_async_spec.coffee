@@ -10,34 +10,31 @@ describe '[CoffeeScript w/async.js] nodegit 저장소', () ->
     open = nodegit.Repo.open
     async.waterfall [
       open.bind(open, nodegitPath)
-      (repo, callback) ->
+      (repo, cb) ->
         expect(repo.path()).toMatch /\/git\/nodegit\/$/
-        repo.getCommit sha, callback
-      (entry, callback) ->
+        repo.getCommit sha, cb
+      (entry, cb) ->
         expect(entry.sha()).toEqual sha
-        callback null
+        cb null
     ], done
 
   it 'diff 실행해보기', (done) ->
     async.waterfall [
-      (callback) ->
-        nodegit.Repo.open nodegitPath, callback
-      (repo, callback) ->
-        async.waterfall [
-          (callback) ->
-            async.parallel [
-              repo.getCommit.bind(repo, "33c7b930acc13148ef6f05df56f9b8a5c3578a57"),
-              repo.getCommit.bind(repo, "c3e4be4448d2a99917431d3be972ca262805f989")
-            ], callback
-          (commits, callback) ->
-            async.parallel [
-              repo.getTree.bind(repo, commits[0].treeId()),
-              repo.getTree.bind(repo, commits[1].treeId())
-            ], callback
-          (trees, callback) ->
-            trees[0].diff trees[1], callback
-          (diff, callback) ->
-            expect(_.reduce(diff.patches(), ((m, p) -> m + p.size()), 0)).toBe(2)
-            callback null
-        ], callback
+      (cb) ->
+        nodegit.Repo.open nodegitPath, cb
+      (repo, cb) ->
+        async.parallel [
+          repo.getCommit.bind(repo, "33c7b930acc13148ef6f05df56f9b8a5c3578a57"),
+          repo.getCommit.bind(repo, "c3e4be4448d2a99917431d3be972ca262805f989")
+        ], (err, commits) -> cb(err, repo, commits)
+      (repo, commits, cb) ->
+        async.parallel [
+          repo.getTree.bind(repo, commits[0].treeId()),
+          repo.getTree.bind(repo, commits[1].treeId())
+        ], cb
+      (trees, cb) ->
+        trees[0].diff trees[1], cb
+      (diff, cb) ->
+        expect(_.reduce(diff.patches(), ((m, p) -> m + p.size()), 0)).toBe(2)
+        cb null
     ], done
