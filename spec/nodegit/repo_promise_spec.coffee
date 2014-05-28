@@ -20,7 +20,7 @@ describe '[CoffeeScript w/promise.js] nodegit 저장소', () ->
       getCommit(repo)(sha)
     ).then((entry) ->
       expect(entry.sha()).toEqual sha
-    ).then done
+    ).then done, done
 
   it 'diff 실행해보기', (done) ->
     openRepo(nodegitPath).then((repo) ->
@@ -38,4 +38,4 @@ describe '[CoffeeScript w/promise.js] nodegit 저장소', () ->
     ).then((diff) ->
       patchsize = _.reduce(diff.patches(), ((m, p) -> m + p.size()), 0)
       expect(patchsize).toBe(2)
-    ).then(done, (err) -> done(err))
+    ).then done, done
