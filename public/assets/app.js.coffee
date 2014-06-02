@@ -15,3 +15,8 @@
         this.tab == t
       this
     ]
+    .controller "EditorCtrl", ['$scope', '$http', ($scope, $http) ->
+      editor = ace.edit("editor");
+      editor.setTheme("ace/theme/tomorrow_night");
+      editor.getSession().setMode("ace/mode/dot");
+    ]

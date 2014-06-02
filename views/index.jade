@@ -7,3 +7,17 @@ block content
 
   .login-controller(ng-controller="LoginCtrl as login")
     | {{ login.welcome }}
+
+  section.editor-section(ng-controller="EditorCtrl as editor")
+    #editor
+      | digragh G {
+      |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
+      |   edge [arrowsize=0.7];
+      |   시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
+      |   d1 [href="/holiday-project-day-01/", label="D1\nkarma&jasmine"];
+      |   d2 [href="/holiday-project-day-02/", label="D2\njasmine-node"];
+      |   d3 [href="/holiday-project-day-03/", label="D3\nsupertest"];
+      |   d4 [href="/holiday-project-day-04/", label="D4\nbower"];
+      | }
+    button.btn.btn-primary 그리기
+    img(src="output.svg")

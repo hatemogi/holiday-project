@@ -26,7 +26,8 @@
     "underscore": "~1.6.0",
     "d3-plugins": "*",
     "keymaster": "~1.6.2",
-    "ace": "~1.1.3"
+    "ace": "~1.1.3",
+    "ace-builds": "~1.1.3"
   },
   "devDependencies": {
     "jasmine": "~2.0.0",

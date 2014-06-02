@@ -20,6 +20,13 @@
       };
       return this;
     }
+  ]).controller("EditorCtrl", [
+    '$scope', '$http', function($scope, $http) {
+      var editor;
+      editor = ace.edit("editor");
+      editor.setTheme("ace/theme/tomorrow_night");
+      return editor.getSession().setMode("ace/mode/dot");
+    }
   ]);
 
 }).call(this);
