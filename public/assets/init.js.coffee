@@ -3,7 +3,6 @@ require_conf = {
   paths: {
     jquery: "bower_components/jquery/dist/jquery.min"
     bootstrap: "bower_components/bootstrap/dist/js/bootstrap.min"
-    d3: "bower_components/d3/d3.min"
     underscore: "js/underscore.min"
   }
   shim: {
@@ -29,6 +28,3 @@ if window.__karma__
   require_conf.callback = window.__karma__.start
 
 require.config require_conf
-
-define 'd3-init', ['d3'], (d3) ->
-  console.log ['D3', d3]

@@ -1,15 +1,26 @@
 extends layout
 
 block content
-  .jumbotron
-    h1= title
-    p D3.js로 SVG 그래프를 그려봅시다.
+  style
+    | .link {
+    |   fill: none;
+    |   stroke: #000;
+    |   stroke-opacity: .2;
+    | }
+    | .link:hover {
+    |  stroke-opacity: .5;
+    | }
+    | .node rect {
+    |   fill: steelblue;
+    | }
+  .wrap
+    .jumbotron
+      h1= title
+      p D3.js로 SVG 그래프를 그려봅시다.
 
-  .d3(ng-controller="D3Ctrl as d3")
-    ul.nav.nav-pills
-      li(ng-class="{ active:d3.isSelected('sankey') }")
-        a(href ng-click="d3.selectTab('sankey')") Sankey 다이어그램
-    .content
-      | {{ content }}
-    svg.d3
+    .d3(ng-controller="D3Ctrl as d3")
+      ul.nav.nav-pills
+        li(ng-class="{ active:d3.isSelected('sankey') }")
+          a(href ng-click="d3.selectTab('sankey')") Sankey 다이어그램
+      svg.d3
 

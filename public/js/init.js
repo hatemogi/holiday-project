@@ -6,7 +6,6 @@
     paths: {
       jquery: "bower_components/jquery/dist/jquery.min",
       bootstrap: "bower_components/bootstrap/dist/js/bootstrap.min",
-      d3: "bower_components/d3/d3.min",
       underscore: "js/underscore.min"
     },
     shim: {
@@ -34,10 +33,6 @@
   }
 
   require.config(require_conf);
-
-  define('d3-init', ['d3'], function(d3) {
-    return console.log(['D3', d3]);
-  });
 
 }).call(this);
 
