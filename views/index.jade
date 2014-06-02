@@ -1,23 +1,22 @@
 extends layout
 
 block content
-  .jumbotron
-    h1= title
-    p 개인 웹개발 연습 프로젝트
-
-  .login-controller(ng-controller="LoginCtrl as login")
-    | {{ login.welcome }}
-
   section.editor-section(ng-controller="EditorCtrl as editor")
-    #editor
-      | digragh G {
-      |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
-      |   edge [arrowsize=0.7];
-      |   시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
-      |   d1 [href="/holiday-project-day-01/", label="D1\nkarma&jasmine"];
-      |   d2 [href="/holiday-project-day-02/", label="D2\njasmine-node"];
-      |   d3 [href="/holiday-project-day-03/", label="D3\nsupertest"];
-      |   d4 [href="/holiday-project-day-04/", label="D4\nbower"];
-      | }
-    button.btn.btn-primary 그리기
-    img(src="output.svg")
+    .row
+      .col-md-6
+
+        #editor
+          | digragh G {
+          |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
+          |   edge [arrowsize=0.7];
+          |   시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
+          |   d1 [href="/holiday-project-day-01/", label="D1\nkarma&jasmine"];
+          |   d2 [href="/holiday-project-day-02/", label="D2\njasmine-node"];
+          |   d3 [href="/holiday-project-day-03/", label="D3\nsupertest"];
+          |   d4 [href="/holiday-project-day-04/", label="D4\nbower"];
+          |   d1 -> d2 -> d3;
+          |   d1 -> d4;
+          | }
+        button.btn.btn-primary 그리기
+      .col-md-6
+        img(src="output.svg")

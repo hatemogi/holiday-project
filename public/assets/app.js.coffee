@@ -16,7 +16,11 @@
       this
     ]
     .controller "EditorCtrl", ['$scope', '$http', ($scope, $http) ->
-      editor = ace.edit("editor");
-      editor.setTheme("ace/theme/tomorrow_night");
-      editor.getSession().setMode("ace/mode/dot");
+      editor = ace.edit("editor")
+      # editor.setTheme("ace/theme/clouds")
+      editor.setTheme("ace/theme/tomorrow")
+      # editor.setTheme("ace/theme/crimson_editor")
+      editor.getSession().setMode("ace/mode/dot")
+      editor.getSession().setUseWrapMode true
+      editor.focus()
     ]

@@ -18,23 +18,28 @@ html
     meta(property="twitter:description" content="#{description}")
 
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet' href='/css/jumbotron-narrow.css')
+    //- link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel='stylesheet' href='/css/style.css')
   body(ng-app="holiday")
+    .navbar.navbar-default(role="navigation")
+      .container
+        .navbar-header
+          ul.nav.navbar-nav.pull-right
+            li
+              a(href="/") 홈
+            li
+              a(href="/d3") D3.js 연습
+            li
+              a(href="http://hatemogi.com") 블로그
+          a.navbar-brand(href="/") gviz.com
     .container
-      .header
-        ul.nav.nav-pills.pull-right
-          li
-            a(href="/") 홈
-          li
-            a(href="/d3") D3.js 연습
-          li
-            a(href="http://hatemogi.com") 블로그
-        h3.text-muted 30일 프로젝트
       block content
       .footer
-        p
-          a(href="http://hatemogi.com/holiday-project/") 개발일지
+        ul.list-inline.pull-right
+          li
+            a(href="http://hatemogi.com/holiday-project/") 개발일지
+          li
+            a(href="http://hatemogi.com/") ©hatemogi
     script(src="/bower_components/angular/angular.min.js")
     script(src="/bower_components/ace-builds/src-min/ace.js")
     script(src="/js/app.min.js")      

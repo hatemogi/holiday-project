@@ -1,11 +1,26 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-height: 1000px;
+}
+
+.container-wide {
+  margin: 0 auto;
+  width: 95%;
 }
 
 #editor {
   position: relative;
-  height: 200px;
-  width: 600px;
-  border: 1px solid black;
+  height: 300px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.footer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 20px;
 }
