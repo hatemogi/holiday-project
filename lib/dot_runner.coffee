@@ -16,6 +16,5 @@ module.exports = {
       result.push data.toString()
     dot.stderr.on 'data', (data) ->
       result_err.push data.toString()
-    dot.stdin.write dotString
-    dot.stdin.end()
+    dot.stdin.end(dotString.toString())
 }

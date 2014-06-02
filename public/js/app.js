@@ -27,7 +27,17 @@
       editor.setTheme("ace/theme/tomorrow");
       editor.getSession().setMode("ace/mode/dot");
       editor.getSession().setUseWrapMode(true);
-      return editor.focus();
+      editor.focus();
+      this.submit = function(e) {
+        return $http.post("/dot", {
+          text: editor.getValue()
+        }).success(function(data, status) {
+          return console.log(['success', data]);
+        }).error(function(res) {
+          return console.log(['error', res]);
+        });
+      };
+      return this;
     }
   ]);
 

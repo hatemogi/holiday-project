@@ -23,4 +23,13 @@
       editor.getSession().setMode("ace/mode/dot")
       editor.getSession().setUseWrapMode true
       editor.focus()
+
+      this.submit = (e) ->
+        # $http.defaults.headers.post["Content-Type"] = "text/plain" 
+        $http.post("/dot", {text: editor.getValue()}).success(
+          (data, status) -> 
+            console.log ['success', data]
+        ).error (res) ->
+          console.log ['error', res]
+      this
     ]

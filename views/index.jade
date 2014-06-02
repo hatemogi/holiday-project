@@ -6,7 +6,7 @@ block content
       .col-md-6
 
         #editor
-          | digragh G {
+          | digraph G {
           |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
           |   edge [arrowsize=0.7];
           |   시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
@@ -17,6 +17,6 @@ block content
           |   d1 -> d2 -> d3;
           |   d1 -> d4;
           | }
-        button.btn.btn-primary 그리기
+        button.btn.btn-primary(ng-click="editor.submit(this);") 그리기
       .col-md-6
         img(src="output.svg")
