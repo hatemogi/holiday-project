@@ -28,7 +28,7 @@
       editor.getSession().setMode("ace/mode/dot");
       editor.getSession().setUseWrapMode(true);
       editor.focus();
-      this.submit = function(e) {
+      this.run = function(e) {
         return $http.post("/dot", {
           text: editor.getValue()
         }).success(function(data, status) {

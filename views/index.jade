@@ -1,6 +1,6 @@
 extends layout
 block content
-  section.editor-section(ng-controller="EditorCtrl as editor")
+  section.editor-section
     .row-fluid
       .col-xs-6.editor-col
         #editor
@@ -16,12 +16,4 @@ block content
           |   d1 -> d4;
           | }
       .col-xs-6.preview-col
-        .row
-          ul.nav.nav-tabs
-            li
-              a(href) png
-            li
-              a(href) svg
-
-        .row
-          #output
+        #output

@@ -1,6 +1,6 @@
 - site = site || {}
-- title = site.title || '30일 프로젝트'
-- description = site.description || "휴가 기간 동안 진행한 개인 프로젝트 데모 사이트"
+- title = site.title || 'GViz'
+- description = site.description || "try GraphViz online"
 doctype html
 html
   head(prefix="og: http://ogp.me/ns#")
@@ -20,26 +20,31 @@ html
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     //- link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel='stylesheet' href='/css/style.css')
-  body(ng-app="holiday")
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
+  body(ng-app="holiday" ng-controller="EditorCtrl as editor")
     .navbar.navbar-default.navbar-static-top.gv-nav(role="navigation")
       .container-full
         .navbar-header
           ul.nav.navbar-nav.pull-right
             li
-              a(href="/")
-                span.glyphicon.glyphicon-play
+              a(href ng-click="editor.run()")
+                i.fa.fa-play
                 |  Run
             li
               a(href="/")
-                span.glyphicon.glyphicon-check
+                i.fa.fa-check-square
                 |  Save
             li
               a(href="/")
-                span.glyphicon.glyphicon-cloud-download
+                i.fa.fa-code-fork
                 |  Fork
             li
               a(href="/")
-                span.glyphicon.glyphicon-info-sign
+                i.fa.fa-share
+                |  Share
+            li
+              a(href="/")
+                i.fa.fa-info-circle
                 |  Help
           a.navbar-brand(href="/") gviz
         .navbar-default.pull-right

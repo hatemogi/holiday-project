@@ -2,7 +2,7 @@ spawn = require("child_process").spawn
 
 module.exports = {
   run: (dotString, callback) ->
-    dot = spawn('dot', ['-Tsvg'], {stdio: 'pipe'})
+    dot = spawn('twopi', ['-Tsvg'], {stdio: 'pipe'})
     result = []
     result_err = []
     dot.stdout.setEncoding 'binary'

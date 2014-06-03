@@ -24,7 +24,7 @@
       editor.getSession().setUseWrapMode true
       editor.focus()
 
-      this.submit = (e) ->
+      this.run = (e) ->
         # $http.defaults.headers.post["Content-Type"] = "text/plain" 
         $http.post("/dot", {text: editor.getValue()}).success(
           (data, status) -> 
