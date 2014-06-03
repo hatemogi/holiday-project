@@ -32,6 +32,7 @@
         return $http.post("/dot", {
           text: editor.getValue()
         }).success(function(data, status) {
+          $('#output').html(data);
           return console.log(['success', data]);
         }).error(function(res) {
           return console.log(['error', res]);

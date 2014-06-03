@@ -5,6 +5,7 @@ module.exports = {
     dot = spawn('dot', ['-Tsvg'], {stdio: 'pipe'})
     result = []
     result_err = []
+    dot.stdout.setEncoding 'binary'
     dot.on 'error', (data) ->
       callback("dot 실행실패: #{data}")
     dot.on 'close', (code) ->

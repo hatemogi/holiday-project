@@ -28,6 +28,7 @@
         # $http.defaults.headers.post["Content-Type"] = "text/plain" 
         $http.post("/dot", {text: editor.getValue()}).success(
           (data, status) -> 
+            $('#output').html data
             console.log ['success', data]
         ).error (res) ->
           console.log ['error', res]

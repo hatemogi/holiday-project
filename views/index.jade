@@ -1,10 +1,8 @@
 extends layout
-
 block content
   section.editor-section(ng-controller="EditorCtrl as editor")
-    .row
-      .col-md-6
-
+    .row-fluid
+      .col-xs-6.editor-col
         #editor
           | digraph G {
           |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
@@ -17,6 +15,13 @@ block content
           |   d1 -> d2 -> d3;
           |   d1 -> d4;
           | }
-        button.btn.btn-primary(ng-click="editor.submit(this);") 그리기
-      .col-md-6
-        img(src="output.svg")
+      .col-xs-6.preview-col
+        .row
+          ul.nav.nav-tabs
+            li
+              a(href) png
+            li
+              a(href) svg
+
+        .row
+          #output

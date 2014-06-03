@@ -21,28 +21,39 @@ html
     //- link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel='stylesheet' href='/css/style.css')
   body(ng-app="holiday")
-    .navbar.navbar-default(role="navigation")
-      .container
+    .navbar.navbar-default.navbar-static-top.gv-nav(role="navigation")
+      .container-full
         .navbar-header
           ul.nav.navbar-nav.pull-right
             li
-              a(href="/") 홈
+              a(href="/")
+                span.glyphicon.glyphicon-play
+                |  Run
             li
-              a(href="/d3") D3.js 연습
+              a(href="/")
+                span.glyphicon.glyphicon-check
+                |  Save
             li
-              a(href="http://hatemogi.com") 블로그
-          a.navbar-brand(href="/") gviz.com
-    .container
+              a(href="/")
+                span.glyphicon.glyphicon-cloud-download
+                |  Fork
+            li
+              a(href="/")
+                span.glyphicon.glyphicon-info-sign
+                |  Help
+          a.navbar-brand(href="/") gviz
+        .navbar-default.pull-right
+          ul.nav.navbar-nav
+            li
+              a(href="/signin")
+                span.glyphicon.glyphicon-user
+                |  Login / Sign-up
+    .container.container-main.container-full
       block content
-      .footer
-        ul.list-inline.pull-right
-          li
-            a(href="http://hatemogi.com/holiday-project/") 개발일지
-          li
-            a(href="http://hatemogi.com/") ©hatemogi
     script(src="/bower_components/angular/angular.min.js")
     script(src="/bower_components/ace-builds/src-min/ace.js")
+    script(src="/bower_components/jquery/dist/jquery.min.js")
     script(src="/js/app.min.js")      
     script(data-main='/js/init.min.js' src='/js/require.min.js')
     include ga
-    include github_badge
+    //- include github_badge

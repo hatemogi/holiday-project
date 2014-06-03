@@ -1,22 +1,28 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  min-height: 1000px;
 }
 
-.container-wide {
+.container-main {
+  min-height: 650px;
+}
+
+.container-full {
   margin: 0 auto;
-  width: 95%;
+  padding: 0;
+  width: 100%;
 }
 
 #editor {
   position: relative;
-  height: 300px;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-.navbar-static-top {
-  margin-bottom: 19px;
+.gv-nav {
+  margin: 0;
+}
+.editor-col, .preview-col {
+  padding: 0;
 }
 
 .footer {
