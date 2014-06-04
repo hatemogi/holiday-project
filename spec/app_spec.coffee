@@ -6,7 +6,7 @@ describe "express 앱", ->
     request(app).get("/")
       .expect("Content-Type", /html/)
       .expect(200)
-      .expect(/30일 프로젝트/)
+      .expect(/editor/)
       .end done
   it "GET /d3", (done) ->
     request(app).get("/d3")

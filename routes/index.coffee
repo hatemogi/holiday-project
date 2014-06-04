@@ -9,7 +9,7 @@ router.get "/", (req, res) ->
 
 router.post "/dot", (req, res) ->
   dot.run req.body.text, (err, svg) ->
-    console.log ["result", svg]
+    # console.log ["result", svg]
     res.end svg
 
 module.exports = router
