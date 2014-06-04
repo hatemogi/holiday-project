@@ -28,9 +28,11 @@
       editor.getSession().setMode("ace/mode/dot");
       editor.getSession().setUseWrapMode(true);
       editor.focus();
+      this.engines = ['dot', 'neato', 'fdp', 'sfdp', 'twopi', 'circo'];
       this.run = function(e) {
         return $http.post("/dot", {
-          text: editor.getValue()
+          text: editor.getValue(),
+          engine: $('#engine-select').val()
         }).success(function(data, status) {
           $('#output').html(data);
           return console.log(['success', data]);

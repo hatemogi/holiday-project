@@ -18,7 +18,7 @@ module.exports = {
   supported_engines: ['dot', 'neato', 'fdp', 'sfdp', 'twopi', 'circo']
   run: (engine, dotString, callback) ->
     assert(this.supported_engines.indexOf(engine) >= 0, "지원하지 않는 엔진: #{engine}")
-    dot = spawn('circo', ['-Tsvg'], {stdio: 'pipe'})
+    dot = spawn(engine, ['-Tsvg'], {stdio: 'pipe'})
     result = []
     result_err = []
     dot.stdout.setEncoding 'binary'

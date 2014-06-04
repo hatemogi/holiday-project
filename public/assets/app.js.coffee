@@ -24,9 +24,13 @@
       editor.getSession().setUseWrapMode true
       editor.focus()
 
+      this.engines = ['dot', 'neato', 'fdp', 'sfdp', 'twopi', 'circo']
       this.run = (e) ->
         # $http.defaults.headers.post["Content-Type"] = "text/plain" 
-        $http.post("/dot", {text: editor.getValue()}).success(
+        $http.post("/dot", {
+          text: editor.getValue()
+          engine: $('#engine-select').val()
+        }).success(
           (data, status) -> 
             $('#output').html data
             console.log ['success', data]
