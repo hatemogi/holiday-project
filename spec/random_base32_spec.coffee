@@ -51,7 +51,7 @@ describe 'base32', ->
   it 'Math.random 4자리 두번 충돌나는 수 확인', ->
     expect(find_conflict_avg(bases.fromBase32('1000'), bases.fromBase32('ZZZZ'), MathRandom, "4자리 충돌")).toBeGreaterThan 10000
   
-  skip = (() -> 'skipped') unless skip?
+  skip = (-> jasmine.log 'skipped') unless skip?
 
   skip 'MultiCarry 5자리 두번 충돌나는 수 확인', ->
     find_conflict_avg(bases.fromBase32('10000'), bases.fromBase32('ZZZZZ'),MultiCarry, "MC 5자리 충돌")
