@@ -21,7 +21,8 @@ module.exports = {
     dot = spawn(engine, ['-Tsvg'], {stdio: 'pipe'})
     result = []
     result_err = []
-    dot.stdout.setEncoding 'binary'
+    # dot.stdout.setEncoding 'binary'
+    # 바이너리로 하면 한글 인코딩 깨짐
     dot.on 'error', (data) ->
       callback("dot 실행실패: #{data}")
     dot.on 'close', (code) ->
