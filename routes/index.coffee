@@ -8,7 +8,8 @@ router.get "/", (req, res) ->
     title: "Express"
 
 router.post "/dot", (req, res) ->
-  dot.run req.body.text, (err, svg) ->
+  engine = req.body.engine || 'dot'
+  dot.run engine, req.body.text, (err, svg) ->
     # console.log ["result", svg]
     res.end svg
 
