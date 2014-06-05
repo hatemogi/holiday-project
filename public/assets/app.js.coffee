@@ -16,12 +16,12 @@
       this
     ]
     .controller "EditorCtrl", ['$scope', '$http', ($scope, $http) ->
-      editor = ace.edit("editor")
+      window.editor = editor = ace.edit("editor")
       # editor.setTheme("ace/theme/clouds")
       editor.setTheme("ace/theme/tomorrow")
       # editor.setTheme("ace/theme/crimson_editor")
       editor.getSession().setMode("ace/mode/dot")
-      editor.getSession().setUseWrapMode true
+      # editor.getSession().setUseWrapMode true
       editor.focus()
 
       this.engines = ['dot', 'neato', 'fdp', 'sfdp', 'twopi', 'circo']
@@ -34,6 +34,7 @@
           (data, status) -> 
             $('#output').html data
             console.log ['success', data]
+            $('#output svg').attr("width", "100%").attr("height", "100%")
         ).error (res) ->
           console.log ['error', res]
       this

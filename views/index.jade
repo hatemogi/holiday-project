@@ -3,20 +3,34 @@ block content
   section.editor-section
     .row-fluid
       .col-xs-2
-        select(id="engine-select")
+        select.form-control(id="engine-select")
           option(ng-repeat="e in editor.engines" value="{{e}}") {{e}}
-      .col-xs-4.editor-col
-        #editor
-          | digraph G {
-          |   node [style=filled, fillcolor=steelblue, fontsize=9, fontcolor=white];
-          |   edge [arrowsize=0.7];
-          |   시작 [fillcolor=deepskyblue, shape="rect", style="filled, rounded"];
-          |   d1 [href="/holiday-project-day-01/", label="D1\nkarma&jasmine"];
-          |   d2 [href="/holiday-project-day-02/", label="D2\njasmine-node"];
-          |   d3 [href="/holiday-project-day-03/", label="D3\nsupertest"];
-          |   d4 [href="/holiday-project-day-04/", label="D4\nbower"];
-          |   d1 -> d2 -> d3;
-          |   d1 -> d4;
-          | }
-      .col-xs-4.preview-col
+      .col-xs-5.editor-col
+      .col-xs-5.preview-col#preview
         #output
+
+  #editor
+    | digraph G {
+    |   subgraph cluster_0 {
+    |     style=filled;
+    |     color=lightgrey;
+    |     node [style=filled,color=white];
+    |     a0 -> a1 -> a2 -> a3;
+    |     label = "process #1";
+    |   }
+    |   subgraph cluster_1 {
+    |     node [style=filled];
+    |     b0 -> b1 -> b2 -> b3;
+    |     label = "process #2";
+    |     color=blue
+    |   }
+    |   start -> a0;
+    |   start -> b0;
+    |   a1 -> b3;
+    |   b2 -> a3;
+    |   a3 -> a0;
+    |   a3 -> end;
+    |   b3 -> end; 
+    |   start [shape=Mdiamond];
+    |   end [shape=Msquare];
+    | }

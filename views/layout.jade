@@ -46,7 +46,7 @@ html
               a(href="/")
                 i.fa.fa-info-circle
                 |  Help
-          a.navbar-brand(href="/") gviz
+          a.navbar-brand(href="/") gvDoodle
         .navbar-default.pull-right
           ul.nav.navbar-nav
             li
@@ -55,6 +55,8 @@ html
                 |  Login / Sign-up
     .container.container-main.container-full
       block content
+    footer
+      | @hatemogi
     script(src="/bower_components/angular/angular.min.js")
     script(src="/bower_components/ace-builds/src-min/ace.js")
     script(src="/bower_components/jquery/dist/jquery.min.js")

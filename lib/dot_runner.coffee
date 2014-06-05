@@ -27,9 +27,9 @@ module.exports = {
       callback("dot 실행실패: #{data}")
     dot.on 'close', (code) ->
       if (code == 0)
-        callback(null, result.join())
+        callback(null, result.join(''))
       else
-        callback(code, result_err.join())
+        callback(code, result_err.join(''))
     dot.stdout.on 'data', (data) ->
       result.push data.toString()
     dot.stderr.on 'data', (data) ->

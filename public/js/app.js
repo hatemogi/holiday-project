@@ -23,10 +23,9 @@
   ]).controller("EditorCtrl", [
     '$scope', '$http', function($scope, $http) {
       var editor;
-      editor = ace.edit("editor");
+      window.editor = editor = ace.edit("editor");
       editor.setTheme("ace/theme/tomorrow");
       editor.getSession().setMode("ace/mode/dot");
-      editor.getSession().setUseWrapMode(true);
       editor.focus();
       this.engines = ['dot', 'neato', 'fdp', 'sfdp', 'twopi', 'circo'];
       this.run = function(e) {
@@ -35,7 +34,8 @@
           engine: $('#engine-select').val()
         }).success(function(data, status) {
           $('#output').html(data);
-          return console.log(['success', data]);
+          console.log(['success', data]);
+          return $('#output svg').attr("width", "100%").attr("height", "100%");
         }).error(function(res) {
           return console.log(['error', res]);
         });
