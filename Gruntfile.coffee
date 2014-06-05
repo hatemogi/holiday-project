@@ -68,6 +68,10 @@ module.exports = (grunt) ->
         files: ["lib/**/*.coffee", "spec/**/*.coffee", "app.coffee", "routes/*.coffee"]
         tasks: ["jasmine_node"] 
       }
+      less: {
+        files: ["public/assets/*.less"]
+        tasks: ["less"]
+      }
     }
 
     jshint: {
@@ -89,6 +93,18 @@ module.exports = (grunt) ->
         coffee: true
       }
     }
+
+    less: {
+      all: {
+        options: {
+          paths: ["public/asset"]
+          compress: true
+        }
+        files: {
+          "public/css/editor.css": "public/assets/editor.css.less"
+        }
+      }
+    }
   }
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -97,6 +113,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-jasmine-node'
+  grunt.loadNpmTasks 'grunt-contrib-less'
 
   grunt.registerTask 'test', ['jasmine_node']
-  grunt.registerTask 'default', ['coffee', 'uglify', 'test']
+  grunt.registerTask 'default', ['coffee', 'uglify', 'less', 'test']
