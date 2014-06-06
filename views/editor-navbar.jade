@@ -1,0 +1,51 @@
+.navbar.navbar-default.navbar-static-top.editor-nav(role="navigation")
+  .container-full
+    .navbar-header
+      ul.nav.navbar-nav.pull-right
+        li
+          a(href ng-click="editor.run()")
+            i.fa.fa-play
+            |  Run
+        li
+          a(href="/")
+            i.fa.fa-check-square-o
+            |  Save
+        //- li
+          a(href="/")
+            i.fa.fa-code-fork
+            |  Fork
+        //- li.dropdown
+          a.dropdown-toggle(href data-toggle="dropdown")
+            i.fa.fa-clipboard
+            |  Examples
+            b.caret
+            ul.dropdown-menu
+              li
+                a(href) Action
+              li.divider
+              li
+                a(href) Action 2
+        li.dropdown
+          a.dropdown-toggle(href data-toggle="dropdown")
+            i.fa.fa-share
+            |  Share
+            b.caret
+            ul.dropdown-menu
+              li
+                a(href)
+                  i.fa.fa-twitter
+                  |  twitter
+              li
+                a(href)
+                  i.fa.fa-facebook
+                  |  facebook
+        //- li
+          a(href="/")
+            i.fa.fa-info-circle
+            |  Help
+      a.navbar-brand(href="/")
+        img.logo(src="/logo.svg")
+        |  GVDoodle
+    //- .navbar-default.pull-right
+      ul.nav.navbar-nav
+        li

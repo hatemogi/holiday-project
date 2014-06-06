@@ -1,0 +1,72 @@
+#option
+  .panel.panel-default
+    .panel-heading
+      h5.panel-title
+        | Doodle Engine
+    .panel-collapse
+      .panel-body
+        select.form-control(id="engine-select")
+          option(ng-repeat="e in editor.engines" value="{{e}}") {{e}}
+
+  .panel-group#collapse-panel
+    .panel.panel-default
+      .panel-heading
+        h5.panel-title
+          a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-about") About
+      .panel-collapse.collapse.in#collapse-about
+        .panel-body
+          :markdown
+            GVDoodle is for writing and sharing [Graphviz] files online.
+
+            Save your [dot] file on this site, then the generated .svg file will be easily shared online.
+
+            [Graphviz]: http://www.graphviz.org
+            [dot]: https://en.wikipedia.org/wiki/DOT_(graph_description_language)
+
+    .panel.panel-default
+      .panel-heading
+        h5.panel-title
+          a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-examples") Examples
+      .panel-collapse.collapse#collapse-examples
+        .panel-body
+
+          ul.list-group
+            li.list-group-item
+              a(href="/1213") cluster
+
+          | Examples above are imported from 
+          a(href="http://www.graphviz.org/Gallery.php") Graphviz Gallery
+          | .
+
+    .panel.panel-default
+      .panel-heading
+        h5.panel-title
+          a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-credits") Credits and License
+      .panel-collapse.collapse#collapse-credits
+        .panel-body
+          :markdown
+            ##### Credits
+
+            This site is inspired by [JSFiddle](http://jsfiddle.net), and created by [Daehyun Kim](http://hatemogi.com).
+
+            All great work (if any) is done by [Graphviz](http://www.graphviz.org).
+
+            ##### License
+
+            All graph belongs to the poster and no license is enforced.
+
+            Notice that all graph saved would be accessible publicly.
+
+    .panel.panel-default
+      .panel-heading
+        h5.panel-title
+          a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-links") Links
+      .panel-collapse.collapse#collapse-links
+        .panel-body
+          :markdown
+            If you have any feedback, write one via [twitter](https://twitter.com/gvdoodle), [Facebook](https://facebook.com/gvdoodle) or [email](mailto:gvdoodle@gmail.com).
+
+  footer
+    a(href)
+      i.fa.fa-keyboard-o
+      |  hotkeys

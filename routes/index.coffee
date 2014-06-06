@@ -4,8 +4,7 @@ router = express.Router()
 
 # GET home page.
 router.get "/", (req, res) ->
-  res.render "index",
-    title: "Express"
+  res.render "editor"
 
 router.post "/dot", (req, res) ->
   engine = req.body.engine || 'dot'

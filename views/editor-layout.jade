@@ -1,5 +1,5 @@
 - site = site || {}
-- title = site.title || 'gvDoodle'
+- title = site.title || 'GVDoodle'
 - description = site.description || "Doodle GraphViz Online"
 doctype html
 html
@@ -18,15 +18,16 @@ html
     meta(property="twitter:description" content="#{description}")
 
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-    //- link(rel='stylesheet' href='/css/jumbotron-narrow.css')
     link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
     link(rel='stylesheet' href='/css/style.css')
     link(rel='stylesheet' href='/css/editor.css')
   body(ng-app="holiday" ng-controller="EditorCtrl as editor")
+    include editor-navbar
     block content
     script(src="/bower_components/angular/angular.min.js")
     script(src="/bower_components/ace-builds/src-min/ace.js")
     script(src="/bower_components/jquery/dist/jquery.min.js")
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
     script(src="/js/app.min.js")
     script(data-main='/js/init.min.js' src='/js/require.min.js')
     include ga
