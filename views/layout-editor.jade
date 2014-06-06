@@ -1,0 +1,33 @@
+- site = site || {}
+- title = site.title || 'gvDoodle'
+- description = site.description || "Doodle GraphViz Online"
+doctype html
+html
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    meta(property="og:title" content="#{title}")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="http://holiday-project.hatemogi.com")
+    meta(property="og:description" content="#{description}")
+    if site.image
+      meta(property="og:image" content="#{site.image}")
+    meta(property="twitter:title" content="#{title}")
+    meta(property="twitter:description" content="#{description}")
+
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    //- link(rel='stylesheet' href='/css/jumbotron-narrow.css')
+    link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/editor.css')
+  body(ng-app="holiday" ng-controller="EditorCtrl as editor")
+    block content
+    script(src="/bower_components/angular/angular.min.js")
+    script(src="/bower_components/ace-builds/src-min/ace.js")
+    script(src="/bower_components/jquery/dist/jquery.min.js")
+    script(src="/js/app.min.js")
+    script(data-main='/js/init.min.js' src='/js/require.min.js')
+    include ga
+    //- include github_badge
