@@ -2,7 +2,7 @@ express = require "express"
 dot = require "../lib/dot_runner"
 router = express.Router()
 
-# GET home page. 
+# GET home page.
 router.get "/", (req, res) ->
   res.render "index",
     title: "Express"

@@ -34,7 +34,7 @@ find_conflict_avg = (start, end, rngClass, msg) ->
   avg = counts.reduce((r,c) -> (r || 0) + c) / counts.length
   min = Math.min.apply(Math.min, counts)
   # console.log("#{msg} [#{counts}]: avg = #{avg}, min = #{min}")
-  avg  
+  avg
 describe 'base32', ->
   MathRandom = (range) ->
     this.next = () ->
@@ -50,11 +50,10 @@ describe 'base32', ->
     expect(find_conflict_avg(bases.fromBase32('10000'), bases.fromBase32('ZZZZZ'),MathRandom, "5자리 충돌")).toBeGreaterThan 100000
   it 'Math.random 4자리 두번 충돌나는 수 확인', ->
     expect(find_conflict_avg(bases.fromBase32('1000'), bases.fromBase32('ZZZZ'), MathRandom, "4자리 충돌")).toBeGreaterThan 10000
-  
+
   skip = (-> jasmine.log 'skipped') unless skip?
 
   skip 'MultiCarry 5자리 두번 충돌나는 수 확인', ->
     find_conflict_avg(bases.fromBase32('10000'), bases.fromBase32('ZZZZZ'),MultiCarry, "MC 5자리 충돌")
   skip 'MultiCarry 4자리 두번 충돌나는 수 확인', ->
     find_conflict_avg(bases.fromBase32('1000'), bases.fromBase32('ZZZZ'), MultiCarry, "MC 4자리 충돌")
-  

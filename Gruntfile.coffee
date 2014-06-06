@@ -23,7 +23,7 @@ module.exports = (grunt) ->
         }
         files: {
           "public/js/underscore.min.js": ["public/bower_components/underscore/underscore.js"]
-        }        
+        }
       }
       requirejs: {
         options: {
@@ -66,7 +66,7 @@ module.exports = (grunt) ->
       }
       jasmine_node: {
         files: ["lib/**/*.coffee", "spec/**/*.coffee", "app.coffee", "routes/*.coffee"]
-        tasks: ["jasmine_node"] 
+        tasks: ["jasmine_node"]
       }
       less: {
         files: ["public/assets/*.less"]

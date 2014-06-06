@@ -37,7 +37,7 @@ async.waterfall [
       branches["master"].push key
       commits[key] = c
     history.on 'end', (r) ->
-      console.log JSON.stringify({commits: commits, branches: branches})      
+      console.log JSON.stringify({commits: commits, branches: branches})
     history.start()
 ]
 

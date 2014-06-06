@@ -7,7 +7,7 @@ describe 'dotRunner', ->
         done(err)
       else
         expect(data).toMatch /svg/
-        done()  
+        done()
   it 'run 구문 에러 테스트', (done) ->
     dotRunner.run "dot", "digraph G { 한글 -> t -> p;", (err, data) ->
       unless err

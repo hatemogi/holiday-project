@@ -10,7 +10,7 @@ repo = Rugged::Repository.new('git/nodegit.git')
 walker = Rugged::Walker.new(repo)
 walker.sorting Rugged::SORT_TOPO
 walker.push(repo.ref("refs/heads/master").target)
-branches['master'] = walker.collect do |commit| 
+branches['master'] = walker.collect do |commit|
   key = commit.oid[0..7]
   changes = 1
   if commit.parents.size == 1

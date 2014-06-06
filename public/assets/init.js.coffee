@@ -24,7 +24,7 @@ if window.__karma__
     if /_spec.js$/.test(f)
       spec_files.push f.replace(/^\/base\//, '').replace(/\.js$/, '')
   console.log ["테스트 대상", spec_files]
-  require_conf.baseUrl = 'base/' 
+  require_conf.baseUrl = 'base/'
   require_conf.deps = spec_files
   require_conf.callback = window.__karma__.start
 
