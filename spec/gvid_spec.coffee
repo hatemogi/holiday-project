@@ -17,6 +17,7 @@ describe 'gvID', ->
 
   it '#valid: gvid가 맞는지 확인', () ->
     expect(gvid.valid('12345')).toBe true, "12345는 정상"
+    expect(gvid.valid('CRAZY')).toBe true, "CRAZY는 정상"
     expect(gvid.valid('')).toBe false, "비어서는 안됨"
     expect(gvid.valid()).toBe false, "비어서는 안됨"
     expect(gvid.valid('1234')).toBe false, "4자리는 안됨"
