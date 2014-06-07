@@ -10,7 +10,7 @@ describe 'Store (File)', ->
       (cb) ->
         store.save_source meta, dot, cb
       (id, cb) ->
-        expect(gvid.match(id)).toBeTruthy()
+        expect(gvid.valid(id)).toBeTruthy()
         expect(store.exists_source(id)).toBeTruthy()
         store.load_source(id, cb)
       (m, d, cb) ->
