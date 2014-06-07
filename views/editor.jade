@@ -3,17 +3,20 @@ block content
   #editor-container
     include editor-sidebar
     #editor
-      | /*
-      |   Edit your "dot" language and click "Run" button.
-      |   Then the result will appear on preview area.
-      |   http://www.graphviz.org/content/dot-language
-      |  */
-      | 
-      | digraph G {
-      |   Hello -> World;
-      |   World -> Beautiful;
-      |   Life -> Beautiful;
-      | }
+      if dot
+        = dot
+      else
+        | /*
+        |   Edit your "dot" language and click "Run" button.
+        |   Then the result will appear on preview area.
+        |   http://www.graphviz.org/content/dot-language
+        |  */
+        | 
+        | digraph G {
+        |   Hello -> World;
+        |   World -> Beautiful;
+        |   Life -> Beautiful;
+        | }
     #preview
       #output
         svg(width="100%" height="100" viewBox="0.00 0.00 100.00 200.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")

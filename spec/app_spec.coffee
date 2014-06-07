@@ -19,3 +19,7 @@ describe "express 앱", ->
     request(app).post("/dot").send({text: body})
       .expect(200)
       .end done
+  it "GET /TEST1 - 소스 읽기", (done) ->
+    request(app).get("/TEST1")
+      .expect(200)
+      .end done
