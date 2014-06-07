@@ -1,5 +1,9 @@
 TODO
 ==========
+* ACE 에디터 본문 부분이 깜빡이는 것이 거슬림
+* 똑같은 소스라면 같은 gvID를 발급할까? 아니면 최소한 공간 절약이라도?
+* window.localStorage 이용해서 히스토리 제공
+* 불필요 모듈 및 소스/스펙 제거 (eg. nodegit)
 * 손님용 화면 먼저 구현. 저장 때마다 새로운 gvID 발급.
 * 로그인 사용자는 저장 때마다 새로 발급하고, 기존 것은 리스트에서 가림. 리비전 카운트를 표시할까?
 * 엔진 사용시 옵션 지정
@@ -25,6 +29,7 @@ FIX
 
 DONE
 ===========
+* gvID 판별 RE작성
 * img태그에서 svg사용 가능한 브라우저: http://caniuse.com/svg-img (현재 전부)
 * 도메인등록 (후보: gvdoodle.com + gvd.kr, graphdoodle.com, gvfiddle.com, gvbin.com, graphviz-online.com, gvo.kr, gvon.in)
 * SVG 웹페이지에 그릴 때 크기 조절 (너무 큰 경우 축소, viewBox를 유지한채, width/height를 조정하면 됨.)
