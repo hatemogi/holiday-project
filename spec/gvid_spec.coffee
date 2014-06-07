@@ -9,7 +9,7 @@ describe 'gvID', ->
 
   it '신규발급 1차 중복 확인', (done) ->
     map = {}
-    for _ in [0..1000]
+    for _ in [0..100]
       id = gvid()
       return done("duplicated") if map[id]
       map[id] = "occupied"
