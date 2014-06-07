@@ -34,7 +34,7 @@
           (data, status) ->
             $('#output').html data
             console.log ['success', data]
-            $('#output svg').attr("width", "100%").attr("height", "100%")
+            # $('#output svg').attr("width", "100%").attr("height", "100%")
         ).error (res) ->
           console.log ['error', res]
       this

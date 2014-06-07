@@ -34,8 +34,7 @@
           engine: $('#engine-select').val()
         }).success(function(data, status) {
           $('#output').html(data);
-          console.log(['success', data]);
-          return $('#output svg').attr("width", "100%").attr("height", "100%");
+          return console.log(['success', data]);
         }).error(function(res) {
           return console.log(['error', res]);
         });

@@ -2,7 +2,7 @@
   .panel.panel-default
     .panel-heading
       h5.panel-title
-        | Doodle Engine
+        | Layout Engine
     .panel-collapse
       .panel-body
         select.form-control(id="engine-select")
@@ -13,7 +13,7 @@
       .panel-heading
         h5.panel-title
           a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-about") About
-      .panel-collapse.collapse.in#collapse-about
+      .panel-collapse.collapse#collapse-about
         .panel-body
           :markdown
             GVDoodle is for writing and sharing [Graphviz] files online.
@@ -27,12 +27,12 @@
       .panel-heading
         h5.panel-title
           a(data-toggle="collapse" data-parent="#collapse-panel" href="#collapse-examples") Examples
-      .panel-collapse.collapse#collapse-examples
+      .panel-collapse.collapse.in#collapse-examples
         .panel-body
 
-          ul.list-group
-            li.list-group-item
-              a(href="/1213") cluster
+          .list-group
+            a.list-group-item(href="/1213") cluster
+            a.list-group-item(href="/1213") fsm
 
           | Examples above are imported from 
           a(href="http://www.graphviz.org/Gallery.php") Graphviz Gallery
@@ -47,7 +47,7 @@
           :markdown
             ##### Credits
 
-            This site is inspired by [JSFiddle](http://jsfiddle.net), and created by [Daehyun Kim](http://hatemogi.com).
+            This site is inspired by [JSFiddle](http://jsfiddle.net), and created by [Daehyun Kim](https://twitter.com/hatemogi).
 
             All great work (if any) is done by [Graphviz](http://www.graphviz.org).
 
@@ -55,7 +55,7 @@
 
             All graph belongs to the poster and no license is enforced.
 
-            Notice that all graph saved would be accessible publicly.
+            Notice that a saved graph is accessible publicly.
 
     .panel.panel-default
       .panel-heading
@@ -66,7 +66,7 @@
           :markdown
             If you have any feedback, write one via [twitter](https://twitter.com/gvdoodle), [Facebook](https://facebook.com/gvdoodle) or [email](mailto:gvdoodle@gmail.com).
 
-  footer
+  //- footer
     a(href)
       i.fa.fa-keyboard-o
       |  hotkeys
